@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: LexendGiga;
+  src: url("fonts/LexendGiga-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  font-size: 35px;
+  color: white;
+}
+#logo {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #fff;
+  width: 30%;
+  height: 176px;
+  float: left;
+}
+#header_text {
+  font-family: "LexendGiga", Georgia, "Times New Roman", Times, serif;
+  background-color: #fceed1;
+  text-align: center;
+  width: 70%;
+  height: 176px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  vertical-align: bottom;
+  float: left;
+  color: #7d3cff;
+}
+
+section {
+  background: #f2d53c;
+}
+
+nav {
+  width: 30%;
+  float: left;
+  height: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  padding-left: 30px;
+}
+nav li {
+  padding-top: 10px;
+}
+
+nav li a {
+  font-family: "Roboto", Georgia, "Times New Roman", Times, serif;
+  font-size: 36px;
+  padding: 0 13px;
+  background-color: #c80e13;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav li a:hover {
+  background-color: #555;
+}
+
+nav li a:active {
+  background-color: black;
+}
+
+article {
+  float: left;
+  padding-top: 15px;
+  width: 70%;
+  background-color: #c80e13;
+  min-height: 300px;
+  color: white;
+}
+
+article h1 {
+  font-family: "LexendGiga", Georgia, "Times New Roman", Times, serif;
+}
+#product_category {
+  padding: 30px;
+}
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  height: 350px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background-color: #d11;
+}
+
+.price {
+  color: #fff;
+  font-size: 22px;
+}
+
+.card h2 {
+  color: #ccc;
+  font-size: 0.95em;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.card img {
+  width: 100px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 23px;
+}
+
+.product-info {
+  height: 90%;
+  padding-top: 10px;
+}
+
+.product-add {
+  height: 10%;
+}
+
+#clear_filters {
+  display: none;
+  padding-left: 30px;
+}
+.filters a {
+  color: white;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  background-color: #fceed1;
+  padding: 10px;
+  text-align: center;
+  color: #7d3cff;
+}
+
+.hidden_input{
+    display: none;
+}
+
+/* Style inputs, select elements and textareas */
+.container input[type="text"],
+.container input[type="tel"],
+.container input[type="email"],
+.container input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background-color: #580a0d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}

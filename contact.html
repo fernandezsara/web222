@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lactose Free | Canadian Store</title>
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <img src="images/logo.png" alt="Lactose Free | Canadian Store" />
+      </div>
+      <div id="header_text">
+        The first store focused in lactose-free and dairy-free products.
+      </div>
+    </header>
+  
+    <section>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" id="food_kits">Food Kits</a></li>
+          <li><a href="#" id="ready_food">Ready Food</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+  
+      <article>
+        <div class="container">
+          <form id="contact_form" action="https://httpbin.org/post" method="POST">
+            <div class="row">
+              <div class="col-25">
+                <label for="fname">First Name</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="First Name" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="lname">Last Name</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="lname" name="lastname" placeholder="Last Name" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="lname">Email Address</label>
+              </div>
+              <div class="col-75">
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="country">City</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="city" name="city" list="cities" placeholder="City" required>
+                <datalist id="cities">
+                  <option value="Toronto, Ontario">
+                  <option value="Montreal, Quebec">
+                  <option value="Vancouver, British Columbia">
+                  <option value="Calgary, Alberta">
+              </datalist>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="lname">Phone Number (format: 999 999 9999)</label>
+              </div>
+              <div class="col-75">
+                <input type="tel" id="phonenumber" name="phonenumber" pattern="^\d{3} \d{3} \d{4}$" required placeholder="Phone Number">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-25">
+                <label for="lname">Postal Code (format: X9X 9X9)</label>
+              </div>
+              <div class="col-75">
+                <input type="tel" id="postalcode" name="postalcode" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" required placeholder="Postal Code">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-25">
+                <label for="lname">Would you like to be phoned?</label>
+              </div>
+              <div class="col-75">
+                <input type="checkbox" id="phoned" name="phoned" value="1">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-25">
+                <label for="lname">Subject</label>
+              </div>
+              <div class="col-75">
+                <input type="radio" onclick="handleRadio('hide')" id="radio_question" name="subject" value="question" checked> <label for="radio_question">Question</label>
+                <input type="radio" onclick="handleRadio('hide')" id="radio_comment" name="subject" value="comment"> <label for="radio_comment">Comment</label>
+                <input type="radio" onclick="handleRadio('show')" id="radio_order" name="subject" value="order_problem"> <label for="radio_order">Order Problem</label>
+                <input type="number" id="order_number" name="order_number" class="hidden_input" placeholder="Order number"/>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-25">
+                <label for="subject">Message</label>
+              </div>
+              <div class="col-75">
+                <textarea id="subject" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+              </div>
+            </div>
+            <input type="hidden" name="my_name" value="Sara Fernandez" />
+            <div class="row">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </article>
+    </section>
+  
+  
+    <footer>
+      <p>
+        <form action="https://formspree.io/xvobjpal" method="POST" target="_blank">
+          <input type="text" name="_replyto" placeholder="Your e-mail"> <button type="submit">Subscribe to our newsletter</button>
+        </form>
+      </p>
+      <p>Lactose Free | Canadian Store - E-mail: <a href="mailto:contact@lfcs.ca">contact@lfcs.ca</a></p>
+    </footer>
+    </div>
+    <script src="script.js"></script>
+    <!--    
+
+    Part 2: Contact Us Page
+
+    Requirements:
+
+    2. Include an HTML Form for the user to fill out his or her information along
+    with their message to you. Your form should including the following, and all
+    fields should be mandatory unless otherwise noted, and use the most appropriate <input> type:
+    
+        - First Name
+        - Last Name
+        - Email Address
+        - Address
+        - City (use a <datalist> for autocomplete of common Canadian cities)
+        - Phone Number (must be a valid Canadian Phone Number, use regex)
+        - Postal Code (must be a valid Canadian Postal Code, use regex)
+        - Checkbox Option to be phoned ("Would you like to be phoned?")
+        - Radio Options to specify what this is about: one of "Question",
+          "Comment", or "Order Problem". If the user selects "Order Problem",
+          dynamically reveal another input box to enter the order number. In the
+          case of "Comment" or "Question" hide this input box.
+        - A large area to enter the message that they want to send
+        - A hidden input field with your name
+
+    3. The form should submit to https://httpbin.org/post using the POST method,
+    and only allow the user to submit when all data has been entered and there
+    aren't any validation errors.  The data posted to httpbin.org should include
+    all data defined in the form above (e.g., visible and hidden fields).
+
+  --></body>
+</html>
